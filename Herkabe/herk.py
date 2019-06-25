@@ -9,9 +9,9 @@ import functools
 # Takes a list and finds the largest prefix with a match and returns the amount 
 # of matches while removing all words with the prefix
 def largestPrefix(strs):
-    
     # Return 0 if list is empty
-    if not strs: return 0
+    if not strs:
+        return 0
     
     # Sorts the list by length largest top
     strs.sort(key=len, reverse=True)
@@ -42,7 +42,7 @@ def largestPrefix(strs):
         prefixSize -= 1
         # If no prefix could be found, only unique words are left
         # Pop a unique word and return a match of 1
-        if prefixSize == 0:
+        if prefixSize == 0 and not matchFound:
             strs.pop()
     return matches
 
